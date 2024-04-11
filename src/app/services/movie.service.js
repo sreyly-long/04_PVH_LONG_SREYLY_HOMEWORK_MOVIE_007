@@ -8,7 +8,7 @@ export async function getallMovies(){
 }
 
 //Get Movie Action
-export async function getAactionMovie() {
+export async function getActionMovie() {
     const res = await fetch('https://movie-api-get-only-bmc3.vercel.app/api/?genre=Action');
     const dataOne = res.json();
     return dataOne;
@@ -27,9 +27,4 @@ export async function getMovieByIdService (id) {
     const dataThree = res.json();
     return dataThree;
 }
-//Get Movie By Id Action
-export async function getMovieByIdActionService(id) {
-    const res = await fetch(`https://movie-api-get-only-bmc3.vercel.app/api/?/Action/${id}`);
-    const dataFour = res.json();
-    return dataFour;
-}
+

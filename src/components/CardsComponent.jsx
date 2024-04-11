@@ -1,4 +1,4 @@
-import { getAactionMovie, getDramaMovice, getallMovies } from "@/app/services/movie.service"
+import { getActionMovie, getDramaMovice, getallMovies } from "@/app/services/movie.service"
 import Link from "next/link";
 
 export const CardsComponent = async () => {
@@ -26,15 +26,14 @@ export const CardsComponent = async () => {
 
 
 export const ActionCard = async () => {
-    const getMovieAction = await getAactionMovie();
+    const getMovieAction = await getActionMovie();
     return (
         <>
             <section className="flex overflow-x-auto gap-3 no-scrollbar  pt-3 ">
                 {getMovieAction.payload.map((movieAction) => (
-                    <div key={movieAction.movie_id}>
-                        
+                    <div key={movieAction.movie_id}>                      
                             <Link className="p-4 border w-[300px] bg-white border-indigo-300 rounded-lg hover:shadow-xl  flex flex-col items-center"
-                                href="#">
+                                href="">
                                 <img src={movieAction.image ? movieAction.image : 'https://m.ykimg.com/053500006590DC8E13EB661B8CAC8E11'} alt="" />
                                 <div className="mt-3 ">
                                     <h4 className="font-bold text-xl line-clamp-1">{movieAction.movie_title}</h4>
@@ -58,7 +57,7 @@ export const DramaCard = async () => {
                 {getMovieDrama.payload.map((movieDrama) => (
                     <div key={movieDrama.movie_id}>                       
                             <Link className="p-4 border w-[300px] bg-white border-indigo-300 rounded-lg hover:shadow-xl  flex flex-col items-center"
-                                href="#">
+                                href={`/dramaDetail/${movieDrama.movie_id}`}>
                                 <img src={movieDrama.image ? movieDrama.image : 'https://m.ykimg.com/053500006590DC8E13EB661B8CAC8E11'} alt="" />
                                 <div className="mt-3 ">
                                     <h4 className="font-bold text-xl line-clamp-1">{movieDrama.movie_title}</h4>

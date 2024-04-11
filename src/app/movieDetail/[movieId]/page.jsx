@@ -13,7 +13,7 @@ const MovieDetail = async ({ params }) => {
               <section className="w-full flex justify-between">
                 <div className="md:flex-1 px-4">
                   <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-                    <img className="w-full h-full object-cover" src={movieDetail.payload.image}alt="Product Image" />
+                    <img className="w-full h-full object-cover" src={movieDetail.payload.image} alt="Product Image" />
                   </div>
                 </div>
                 <div className="md:flex-1 px-4">
